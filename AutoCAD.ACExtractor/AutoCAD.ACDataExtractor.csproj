@@ -10,7 +10,7 @@
     <ProjectGuid>{38A0EF3B-0219-48BF-BBBD-2ECF4DCA74AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutoCAD.ACData</RootNamespace>
+    <RootNamespace>AutoCADDataExtractor</RootNamespace>
     <AssemblyName>AutoCAD.ACDataExtractor</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -82,10 +82,15 @@
     <!--ACA Refences End-->
     <!--AME Referebces Begin-->
     <!--AME Reference End-->
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Downloads\RedditSharp-master\RedditSharp-master\RedditSharp\bin\Release\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>4.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>4.5</RequiredTargetFramework>
     </Reference>
@@ -103,20 +108,38 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="myCommands.Designer.cs">
+    <Compile Include="AcDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcDataForm.Designer.cs">
+      <DependentUpon>AcDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACDataObj.cs" />
+    <Compile Include="command.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>myCommands.resx</DependentUpon>
+      <DependentUpon>command.resx</DependentUpon>
     </Compile>
-    <Compile Include="myPlugin.cs" />
-    <Compile Include="myCommands.cs" />
+    <Compile Include="command.cs" />
+    <Compile Include="Downloading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Downloading.Designer.cs">
+      <DependentUpon>Downloading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geocoding.cs" />
+    <Compile Include="htmlRequest.cs" />
+    <Compile Include="NZGD200_NZTM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="myCommands.resx">
-      <DependentUpon>myCommands.cs</DependentUpon>
+    <EmbeddedResource Include="AcDataForm.resx">
+      <DependentUpon>AcDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="command.resx">
+      <DependentUpon>command.cs</DependentUpon>
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>myCommands.Designer.cs</LastGenOutput>
+      <LastGenOutput>command.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
