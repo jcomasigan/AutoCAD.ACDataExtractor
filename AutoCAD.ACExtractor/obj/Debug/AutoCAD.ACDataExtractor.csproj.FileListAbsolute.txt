@@ -1,0 +1,10 @@
+C:\Users\Jericho Masigan\Documents\Programming\AutoCAD.AC Aerials\AutoCAD.ACExtractor\bin\Debug\AutoCAD.ACDataExtractor.dll
+C:\Users\Jericho Masigan\Documents\Programming\AutoCAD.AC Aerials\AutoCAD.ACExtractor\bin\Debug\AutoCAD.ACDataExtractor.pdb
+C:\Users\Jericho Masigan\Documents\Programming\AutoCAD.AC Aerials\AutoCAD.ACExtractor\bin\Debug\PresentationCore.dll
+C:\Users\Jericho Masigan\Documents\Programming\AutoCAD.AC Aerials\AutoCAD.ACExtractor\bin\Debug\AcTcMgd.dll
+C:\Users\Jericho Masigan\Documents\Programming\AutoCAD.AC Aerials\AutoCAD.ACExtractor\bin\Debug\AcCui.dll
+C:\Users\Jericho Masigan\Documents\Programming\AutoCAD.AC Aerials\AutoCAD.ACExtractor\obj\Debug\AutoCAD.ACDataExtractor.csprojResolveAssemblyReference.cache
+C:\Users\Jericho Masigan\Documents\Programming\AutoCAD.AC Aerials\AutoCAD.ACExtractor\obj\Debug\Template_AutoCAD_PlugIn.MyCommands.resources
+C:\Users\Jericho Masigan\Documents\Programming\AutoCAD.AC Aerials\AutoCAD.ACExtractor\obj\Debug\AutoCAD.ACDataExtractor.csproj.GenerateResource.Cache
+C:\Users\Jericho Masigan\Documents\Programming\AutoCAD.AC Aerials\AutoCAD.ACExtractor\obj\Debug\AutoCAD.ACDataExtractor.dll
+C:\Users\Jericho Masigan\Documents\Programming\AutoCAD.AC Aerials\AutoCAD.ACExtractor\obj\Debug\AutoCAD.ACDataExtractor.pdb
