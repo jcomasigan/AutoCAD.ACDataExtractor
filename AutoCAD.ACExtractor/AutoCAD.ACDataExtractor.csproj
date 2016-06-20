@@ -43,6 +43,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\AutoCAD.ACDataExtractor.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -90,6 +91,7 @@
       <RequiredTargetFramework>4.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>4.5</RequiredTargetFramework>
@@ -127,7 +129,9 @@
     <Compile Include="Downloading.Designer.cs">
       <DependentUpon>Downloading.cs</DependentUpon>
     </Compile>
+    <Compile Include="DrawEntity.cs" />
     <Compile Include="Geocoding.cs" />
+    <Compile Include="GlobalVariables.cs" />
     <Compile Include="htmlRequest.cs" />
     <Compile Include="NZGD200_NZTM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

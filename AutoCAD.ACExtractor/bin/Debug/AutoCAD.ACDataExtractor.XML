@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AutoCAD.ACDataExtractor</name>
+    </assembly>
+    <members>
+        <member name="F:AutoCADDataExtractor.AcDataForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:AutoCADDataExtractor.AcDataForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:AutoCADDataExtractor.AcDataForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:AutoCADDataExtractor.command">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:AutoCADDataExtractor.command.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:AutoCADDataExtractor.command.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:AutoCADDataExtractor.command.MyCommandLocal">
+            <summary>
+              Looks up a localized string similar to MyCommand.
+            </summary>
+        </member>
+        <member name="P:AutoCADDataExtractor.command.MyLispFunctionLocal">
+            <summary>
+              Looks up a localized string similar to MyLispFunction.
+            </summary>
+        </member>
+        <member name="P:AutoCADDataExtractor.command.MyPickFirstLocal">
+            <summary>
+              Looks up a localized string similar to MyPickFirst.
+            </summary>
+        </member>
+        <member name="P:AutoCADDataExtractor.command.MySessionCmdLocal">
+            <summary>
+              Looks up a localized string similar to MySessionCmd.
+            </summary>
+        </member>
+        <member name="F:AutoCADDataExtractor.Downloading.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:AutoCADDataExtractor.Downloading.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:AutoCADDataExtractor.Downloading.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:AutoCADDataExtractor.DrawEntity.ZoomExtents">
+            <summary>
+            Z E Command
+            </summary>
+        </member>
+        <member name="M:AutoCADDataExtractor.DrawEntity.CreateLayer(System.String,System.Int16)">
+            <summary>
+            Create a new layer. Checks if the layer exist first.
+            </summary>
+            <param name="layerName">Name of the new layer</param>
+            <param name="colour">Colour of the new layer</param>
+        </member>
+        <member name="M:AutoCADDataExtractor.DrawEntity.DrawBox(Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,System.String,System.Int16,System.Boolean)">
+            <summary>
+            Draw 4 point polygon
+            </summary>
+            <param name="pt1"></param>
+            <param name="pt2"></param>
+            <param name="pt3"></param>
+            <param name="pt4"></param>
+            <param name="layerName"> Sets the layer of the polygon. Will create a new layer if layerName is not in the dwg</param>
+            <param name="colour">Layer Colour</param>
+            <param name="isClosed">Whether the polyline is closed or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:AutoCADDataExtractor.DrawEntity.DrawDim(Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,System.String,System.String,System.Double,System.Double,System.Int16)">
+            <summary>
+            Draw aligned dimension
+            </summary>
+            <param name="start">Start of dim</param>
+            <param name="end">End of dim</param>
+            <param name="text">Text overide of dim</param>
+            <param name="layerName"></param>
+            <param name="mtextheight"></param>
+            <param name="colour"></param>
+            <param name="isClosed"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:AutoCADDataExtractor.DrawEntity.DrawPlineFrom3PtList(System.String,System.Int16,System.Collections.Generic.List{System.String},System.Double,System.Boolean)" -->
+        <member name="M:AutoCADDataExtractor.DrawEntity.DrawText(Autodesk.AutoCAD.Geometry.Point2d,System.Double,System.Double,System.String,System.String,System.Int16)">
+            <summary>
+            Creates an MText
+            </summary>
+            <param name="pt1">Point of origin</param>
+            <param name="textVal">Contents of the Mtxt</param>
+            <param name="layerName"></param>
+            <param name="colour"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AutoCADDataExtractor.DrawEntity.DrawCircle(System.Double,Autodesk.AutoCAD.Geometry.Point3d,System.String,System.Int16)">
+            <summary>
+            Draw a circle
+            </summary>
+            <param name="ballRadius"></param>
+            <param name="ballCentre"></param>
+            <param name="layerName"></param>
+            <param name="colour"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

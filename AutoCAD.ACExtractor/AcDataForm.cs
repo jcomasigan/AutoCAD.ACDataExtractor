@@ -40,8 +40,9 @@ namespace AutoCADDataExtractor
         private void getDataButton_Click(object sender, EventArgs e)
         {          
             imageSize = new Tuple<int, int>(Convert.ToInt32(imageXinput.Value), Convert.ToInt32(imageYinput.Value));
-            string url = htmlRequest.UrlConstructor("", latlongNztm, Convert.ToInt32(bboxNumInput.Value), "3", imageSize);
-            Downloading dw = new Downloading(url);
+            string url = htmlRequest.ExportUrlConstructor("", latlongNztm, Convert.ToInt32(bboxNumInput.Value), "3", imageSize);
+            string url1 = htmlRequest.QuerryUrlConstructor("", latlongNztm, Convert.ToInt32(bboxNumInput.Value));
+            Downloading dw = new Downloading(url1);
             dw.ShowDialog();
         }
     }

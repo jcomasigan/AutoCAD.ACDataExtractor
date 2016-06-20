@@ -20,10 +20,29 @@ namespace AutoCADDataExtractor
 
         private void GetData(string url)
         {
-            ACData ac = new ACData();
-            ac = htmlRequest.acJson(url);
-            MessageBox.Show(ac.href);
-            System.Diagnostics.Process.Start(ac.href);
+            GetContourData(url);
+        }
+
+        private void GetImgData(string url)
+        {
+            GlobalVariables.acAerial = JsonConvert.DeserializeObject<ACData_Aerial>(htmlRequest.acJson(url));
+            string imgPath = htmlRequest.GetImage(GlobalVariables.acAerial.href);
+            double width = Convert.ToDouble(GlobalVariables.acAerial.extent.xmax) - Convert.ToDouble(GlobalVariables.acAerial.extent.xmin);
+            double height = Convert.ToDouble(GlobalVariables.acAerial.extent.ymax) - Convert.ToDouble(GlobalVariables.acAerial.extent.ymin);
+            DrawEntity.DrawImg(new Autodesk.AutoCAD.Geometry.Point3d(Convert.ToDouble(GlobalVariables.acAerial.extent.xmin), Convert.ToDouble(GlobalVariables.acAerial.extent.ymin), 0), imgPath, "Img", height, width);
+        }
+
+        private void GetContourData(string url)
+        {
+            GlobalVariables.acContour = JsonConvert.DeserializeObject<ACData_Contour>(htmlRequest.acJson(url));
+            foreach(ACData_Contour_Features feature in GlobalVariables.acContour.features)
+            {
+                foreach(ACData_Contour_Geometry geometry in feature.geometry)
+                {
+                    
+                    DrawEntity.DrawPlineFrom3PtList("CONTOUR", 20, geometry.paths[0].path.ToList<string>() );
+                }
+            }
         }
 
         /*
