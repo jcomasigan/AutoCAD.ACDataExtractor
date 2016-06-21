@@ -29,6 +29,7 @@ namespace AutoCADDataExtractor
     {
         public string Source { get; set; }
         public string Shape_Length { get; set; }
+        public string ELEVATION { get; set; }
     }
 
     public class SpatialReference
@@ -40,6 +41,7 @@ namespace AutoCADDataExtractor
     {
         public string Source { get; set; }
         public double Shape_Length { get; set; }
+        public double ELEVATION { get; set; }
     }
 
     public class Geometry

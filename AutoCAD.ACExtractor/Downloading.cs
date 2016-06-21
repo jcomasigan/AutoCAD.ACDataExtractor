@@ -41,13 +41,13 @@ namespace AutoCADDataExtractor
                 Tuple<double, double, double> ContourPtLatLng;
 
                 //for(int j = 0; i < GlobalVariables.acContour.features[i].geometry.paths[0].Count; j++)
-                for (int j = 0; i < 100; j++)
+                for (int j = 0; j < GlobalVariables.acContour.features[i].geometry.paths[0].Count; j++)
                 {
                     double lat;
                     double lng;
-                    double elav = 0;
-                    lat = GlobalVariables.acContour.features[i].geometry.paths[0][i][0];
-                    lng = GlobalVariables.acContour.features[i].geometry.paths[0][i][1];
+                    double elav = GlobalVariables.acContour.features[i].attributes.ELEVATION;
+                    lat = GlobalVariables.acContour.features[i].geometry.paths[0][j][0];
+                    lng = GlobalVariables.acContour.features[i].geometry.paths[0][j][1];
                     ContourPtLatLng = new Tuple<double, double, double>(lat, lng, elav);
                     contourPts.Add(ContourPtLatLng);
                 }
