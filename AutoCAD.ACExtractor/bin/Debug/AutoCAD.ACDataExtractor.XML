@@ -112,7 +112,7 @@
             <param name="isClosed"></param>
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:AutoCADDataExtractor.DrawEntity.DrawPlineFrom3PtList(System.String,System.Int16,System.Collections.Generic.List{System.String},System.Double,System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:AutoCADDataExtractor.DrawEntity.DrawPlineFrom3PtList(System.String,System.Int16,System.Collections.Generic.List{System.Tuple{System.Double,System.Double,System.Double}},System.Boolean)" -->
         <member name="M:AutoCADDataExtractor.DrawEntity.DrawText(Autodesk.AutoCAD.Geometry.Point2d,System.Double,System.Double,System.String,System.String,System.Int16)">
             <summary>
             Creates an MText

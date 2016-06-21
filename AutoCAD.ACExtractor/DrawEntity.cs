@@ -151,7 +151,7 @@ namespace AutoCADDataExtractor
     /// <param name="polyList">List of points</param>
     /// <param name="elav">elevation point, seperated from the list</param>
     /// <param name="closePoly">Bool to close polyline.</param>
-    public static void DrawPlineFrom3PtList(string layerName, short colour, List<string> polyList, double elav = 0, bool closePoly = true)
+    public static void DrawPlineFrom3PtList(string layerName, short colour, List<Tuple<double, double, double>> polyList, bool closePoly = false)
     {
         Document doc = Application.DocumentManager.MdiActiveDocument;
         Database currentDB = doc.Database;
@@ -161,13 +161,11 @@ namespace AutoCADDataExtractor
             BlockTable blckTable = tr.GetObject(currentDB.BlockTableId, OpenMode.ForRead) as BlockTable;
             BlockTableRecord blockTableRec = tr.GetObject(blckTable[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
             Polyline polyLine = new Polyline();
-            int j = 0; //counter for using pairs of coordinates in a single list.
-            for (int i = 0; i < ((polyList.Count / 3) - 1); i++)
+            for (int i = 0; i < polyList.Count; i++)
             {
-                polyLine.AddVertexAt(i, new Point2d(Convert.ToDouble(polyList[j + 1]), Convert.ToDouble(polyList[j])), 0, 0, 0); //stupid chch contours is the other way around!
-                j += 3;
+                polyLine.AddVertexAt(i, new Point2d(polyList[i].Item1, polyList[i].Item2), 0, 0, 0);
             }
-            polyLine.Elevation = elav;
+            polyLine.Elevation = polyList[0].Item3;
             polyLine.Closed = closePoly;   //Closes the polyline 
             polyLine.Layer = layerName;
             blockTableRec.AppendEntity(polyLine);

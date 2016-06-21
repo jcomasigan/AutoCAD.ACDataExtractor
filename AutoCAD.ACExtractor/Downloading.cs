@@ -35,13 +35,23 @@ namespace AutoCADDataExtractor
         private void GetContourData(string url)
         {
             GlobalVariables.acContour = JsonConvert.DeserializeObject<ACData_Contour>(htmlRequest.acJson(url));
-            foreach(ACData_Contour_Features feature in GlobalVariables.acContour.features)
+            for(int i = 0; i < GlobalVariables.acContour.features.Count; i++ )
             {
-                foreach(ACData_Contour_Geometry geometry in feature.geometry)
+                List<Tuple<double, double, double>> contourPts = new List<Tuple<double, double, double>>();
+                Tuple<double, double, double> ContourPtLatLng;
+
+                //for(int j = 0; i < GlobalVariables.acContour.features[i].geometry.paths[0].Count; j++)
+                for (int j = 0; i < 100; j++)
                 {
-                    
-                    DrawEntity.DrawPlineFrom3PtList("CONTOUR", 20, geometry.paths[0].path.ToList<string>() );
+                    double lat;
+                    double lng;
+                    double elav = 0;
+                    lat = GlobalVariables.acContour.features[i].geometry.paths[0][i][0];
+                    lng = GlobalVariables.acContour.features[i].geometry.paths[0][i][1];
+                    ContourPtLatLng = new Tuple<double, double, double>(lat, lng, elav);
+                    contourPts.Add(ContourPtLatLng);
                 }
+                DrawEntity.DrawPlineFrom3PtList("ACEXTRACTOR.CONTOURS", 10, contourPts);
             }
         }
 
